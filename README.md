@@ -1,55 +1,42 @@
-Customer Life Time Value Prediction
+# Customer Life Time Value Prediction
 
-This repository contains a machine learning pipeline for predicting customer Lifetime Value (LTV) for a digital wallet dataset. The project demonstrates an end-to-end workflow from data preprocessing to model evaluation, including cross-validation and feature transformations.
+This repository contains a **machine learning pipeline** to predict **customer Lifetime Value (LTV)** for a digital wallet dataset. It demonstrates an end-to-end workflow from data preprocessing to model evaluation, including cross-validation and feature transformations.
 
-Key Features
+## Key Features
 
-Data Preprocessing:
+### Data Preprocessing
+- Numerical features transformed using **Yeo-Johnson** for normality and **Standard Scaling**  
+- `Income_Level` column encoded using **Ordinal Encoding**  
+- Other categorical features encoded using **One-Hot Encoding**
 
-Numerical features transformed using Yeo-Johnson for normality and Standard Scaling
+### Modeling
+- **XGBoost Regressor** used for regression  
+- Pipeline ensures consistent preprocessing and model fitting
 
-Income_Level encoded using Ordinal Encoding
+### Evaluation
+- Train/test metrics: **MSE**, **RMSE**, **R²**  
+- **K-Fold Cross-Validation** for robust performance assessment  
+- Feature importance extraction supported
 
-Other categorical features encoded using One-Hot Encoding
+## Results
 
-Modeling:
+| Metric | Train | Test |
+|--------|-------|------|
+| MSE    | 16,958,199 | 23,547,085 |
+| RMSE   | 4,118      | 4,853 |
+| R²     | 0.9999     | 0.9999 |
 
-XGBoost Regressor for regression
+- Near-perfect performance, indicating features are highly predictive of LTV  
+- Stable results across CV folds
 
-Preprocessing pipeline ensures consistent transformations
+## Purpose
+- Showcase an **end-to-end regression pipeline**  
+- Demonstrate preprocessing for **mixed numerical and categorical features**  
+- Example of **XGBoost regression with cross-validation**
 
-Evaluation:
+## Usage
 
-Train/test metrics: MSE, RMSE, R²
+1. Clone the repository:
 
-K-Fold Cross-Validation for robust assessment
-
-Feature importance can be extracted from the trained model
-
-Results
-
-Near-perfect performance: R² ≈ 0.9999, RMSE ≈ 4–5k
-
-Consistent results across CV folds indicate pipeline stability
-
-Purpose
-
-Showcase an end-to-end regression pipeline
-
-Demonstrate preprocessing for mixed numerical and categorical features
-
-Provide an example of XGBoost regression with cross-validation
-
-
-Install dependencies:
-
-pip install pandas numpy scikit-learn xgboost seaborn matplotlib
-
-
-Update the dataset path in the notebook.
-
-Run the notebook to preprocess data, train the pipeline, and evaluate performance.
-
-License
-
-This project is open-source.
+```bash
+git clone https://github.com/<your-username>/Customer-Life-Time-Value-Prediction.git
