@@ -40,3 +40,12 @@ This repository contains a **machine learning pipeline** to predict **customer L
 
 ```bash
 git clone https://github.com/<your-username>/Customer-Life-Time-Value-Prediction.git
+
+Install dependencies:
+
+pip install pandas numpy scikit-learn xgboost seaborn matplotlib
+
+
+Update the dataset path in the notebook
+
+Run the notebook to preprocess data, train the pipeline, and evaluate performance
